@@ -1,0 +1,34 @@
+---
+title: "Groww Pulse"
+hook: "An AI-powered weekly review analyser for product teams. Reads 70+ app store reviews and ships a one-page weekly pulse — themes, top quotes, and 3 action ideas — in under 60 seconds. Built reproducibility through strict JSON contracts so the LLM never drifts."
+metric: "70+ to 60s"
+metricLabel: "App store reviews to a one-page PM pulse"
+tags: ["Shipped", "AI", "LLM"]
+category: "Shipped"
+cardVariant: "forest"
+featured: true
+date: "2026-04-20"
+liveUrl: "https://growwwpulse.vercel.app/"
+githubUrl: "https://github.com/amanav050/groww-pulse"
+imageUrl: "/images/projects/groww-pulse.svg"
+---
+## The problem
+
+Product teams drown in app store reviews. Reading 70+ a week to spot patterns is the kind of work that gets pushed off until it doesn't get done at all — and the signal is lost.
+
+## What I built
+
+A 4-step flow: CSV upload → AI theming → pulse generation → Gmail handoff. The output is a one-page weekly pulse covering 8 weeks of reviews — top themes, real user quotes, and three actionable ideas — generated in under 60 seconds. Stripe-inspired dark UI with a light/dark toggle, mobile responsive.
+
+## Key decisions
+
+I locked JSON contracts across two LLM calls to ensure reproducible output, and enforced a strict "top 3 by review_count" rule to avoid subjective ranking drift. The original architecture used Claude + Gmail MCP for fully automated drafts. Mid-build, I pivoted to Groq (Llama 3.3 70B) and a direct Gmail compose URL under cost constraints. Because I had locked identical response schemas across providers, the pivot was reversible in two files with zero frontend changes — the production stack can switch back the moment budget allows.
+The product is also PII-free by construction, with a 250-word pulse cap and deterministic clustering.
+
+## What I learned
+
+Strict schemas are the difference between drift and trust when swapping LLM providers. The same discipline that made the pivot painless is what makes the output reproducible week to week.
+
+## Try it live
+
+Live at [growwwpulse.vercel.app](https://growwwpulse.vercel.app). Source on [GitHub](https://github.com/amanav050/groww-pulse).

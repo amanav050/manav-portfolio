@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#A56A1F"/>
+  <circle cx="660" cy="120" r="200" fill="#BC7E2E" opacity="0.45"/>
+  <circle cx="100" cy="440" r="200" fill="#864F12" opacity="0.5"/>
+  <g opacity="0.22" stroke="#F4F1EA" stroke-width="2.5" fill="none">
+    <rect x="540" y="250" width="80" height="140" rx="14"/>
+    <line x1="555" y1="280" x2="605" y2="280"/>
+    <line x1="555" y1="305" x2="600" y2="305"/>
+    <rect x="555" y="325" width="50" height="20" rx="3"/>
+    <rect x="555" y="355" width="50" height="20" rx="3"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#F4F1EA" font-weight="400">SynergyFit</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#F4D9A8" font-weight="400">in production.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#F4F1EA" opacity="0.7" letter-spacing="2">AI WORKOUTS · SHIPPING SOON</text>
+</svg>

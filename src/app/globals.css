@@ -1,26 +1,137 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.1); }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 25px) scale(1.05); }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes drawUnderline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-fade-up { animation: fadeUp 0.7s ease-out forwards; opacity: 0; }
+.animate-fade-up-delay-1 { animation: fadeUp 0.7s ease-out 0.1s forwards; opacity: 0; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.7s ease-out 0.2s forwards; opacity: 0; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.7s ease-out 0.35s forwards; opacity: 0; }
+.animate-fade-up-delay-4 { animation: fadeUp 0.7s ease-out 0.5s forwards; opacity: 0; }
+.animate-blob-1 { animation: blobFloat1 12s ease-in-out infinite; }
+.animate-blob-2 { animation: blobFloat2 14s ease-in-out infinite; }
+
+.underline-grow::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #0F766E;
+  transform-origin: left;
+  animation: drawUnderline 0.8s ease-out 1s forwards;
+  transform: scaleX(0);
+}
+
+.avatar-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.avatar-hover:hover {
+  transform: scale(1.08) rotate(-3deg);
+}
+
+.prose-custom {
+  color: #0F0F12;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.prose-custom h2 {
+  font-family: var(--font-fraunces), serif;
+  font-size: 28px;
+  line-height: 1.3;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+  border-left: 4px solid #0F766E;
+}
+
+.prose-custom h3 {
+  font-family: var(--font-fraunces), serif;
+  font-size: 22px;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-custom p {
+  margin-bottom: 1.25rem;
+}
+
+.prose-custom blockquote {
+  border-left: 3px solid #0F766E;
+  padding-left: 1rem;
+  font-style: italic;
+  font-size: 18px;
+  color: rgba(15, 15, 18, 0.8);
+  margin: 1.5rem 0;
+}
+
+.prose-custom ul, .prose-custom ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.prose-custom ul { list-style: disc; }
+.prose-custom ol { list-style: decimal; }
+.prose-custom li { margin-bottom: 0.5rem; }
+
+.prose-custom a {
+  color: #0F766E;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.prose-custom strong {
+  color: #0F0F12;
+  font-weight: 600;
+}
+
+.prose-custom code {
+  background-color: rgba(15, 118, 110, 0.1);
+  color: #0F766E;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.prose-custom table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 14px;
+}
+
+.prose-custom th {
+  background-color: #D5E8E5;
+  text-align: left;
+  padding: 8px 12px;
+  border: 1px solid rgba(15, 15, 18, 0.1);
+}
+
+.prose-custom td {
+  padding: 8px 12px;
+  border: 1px solid rgba(15, 15, 18, 0.1);
 }

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#1F2D4D"/>
+  <circle cx="660" cy="120" r="200" fill="#3349707" opacity="0.4"/>
+  <circle cx="100" cy="440" r="220" fill="#15203A" opacity="0.6"/>
+  <g opacity="0.2" stroke="#F2F0E8" stroke-width="2.5" fill="none">
+    <rect x="540" y="270" width="80" height="140" rx="40"/>
+    <circle cx="580" cy="295" r="6" fill="#F2F0E8"/>
+    <line x1="580" y1="320" x2="580" y2="380"/>
+    <path d="M 560 350 Q 580 360 600 350" stroke-linecap="round"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#F2F0E8" font-weight="400">India's voice</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#B8C4DB" font-weight="400">landscape.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#F2F0E8" opacity="0.7" letter-spacing="2">140M USERS · MILESTONE 1</text>
+</svg>

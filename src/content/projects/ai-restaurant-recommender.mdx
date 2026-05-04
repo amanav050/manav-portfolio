@@ -1,0 +1,35 @@
+---
+title: "AI Restaurant Recommender"
+hook: "An AI agent that recommends restaurants based on your location, cuisine, and budget. Built end-to-end on Zomato's publicly available Bangalore dataset, with deterministic pre-filtering before the LLM call to kill hallucinations and keep token costs honest."
+metric: "End-to-end"
+metricLabel: "Live AI agent, full-stack on Vercel + Railway"
+tags: ["Shipped", "AI", "Full-stack"]
+category: "Shipped"
+cardVariant: "mustard"
+featured: true
+date: "2026-03-25"
+liveUrl: "https://ai-restaurant-recommender-5v63.vercel.app"
+githubUrl: "https://github.com/amanav050/AI-Restaurant-Recommender-"
+imageUrl: "/images/projects/ai-restaurant-recommender.svg"
+---
+## The problem
+
+Most restaurant recommendation engines either drown users in choice or hallucinate options that don't exist. The interesting question isn't "can an LLM recommend a restaurant" — it's how you keep it cheap, fast, and grounded in real data.
+
+## What I built
+
+A full-stack AI recommender across 5 phases: data ingestion from Zomato's HuggingFace dataset, deterministic filtering, Groq's LLaMA for AI-ranked recommendations, and a Google Stitch–style frontend with proper loading, empty, and error states. Backend deployed on Railway (FastAPI), frontend on Vercel.
+
+## Key decisions
+
+The biggest call was filtering deterministically *before* the LLM call — not after. Pre-filtering Zomato's Bangalore dataset by location, cuisine, and budget locks down cost, quality, and hallucination risk in one shot. The LLM only ever sees a small, relevant candidate set, so it can rank — not invent.
+
+I also wired up real food photos via the Pexels API instead of letting the model gesture at images. Recommendations look like actual recommendations, not placeholders.
+
+## What I learned
+
+Yesterday this thing was throwing CORS errors, broken dropdowns, and blank restaurant cards. Today it's live. The lesson — repeated for the hundredth time — is that shipping is a different skill from building. Most of the work happens after the architecture is "done."
+
+## Try it live
+
+Live at [ai-restaurant-recommender-5v63.vercel.app](https://ai-restaurant-recommender-5v63.vercel.app). Source on [GitHub](https://github.com/amanav050/AI-Restaurant-Recommender-).

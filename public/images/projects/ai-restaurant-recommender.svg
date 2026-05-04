@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#C68B17"/>
+  <circle cx="680" cy="120" r="180" fill="#D9A035" opacity="0.45"/>
+  <circle cx="100" cy="440" r="200" fill="#A87410" opacity="0.5"/>
+  <g opacity="0.18" stroke="#1A1410" stroke-width="2.5" fill="none">
+    <circle cx="600" cy="360" r="42"/>
+    <circle cx="600" cy="360" r="22"/>
+    <path d="M 580 340 L 620 380 M 580 380 L 620 340"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#1A1410" font-weight="400">AI Restaurant</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#3B2510" font-weight="400">Recommender.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#1A1410" opacity="0.6" letter-spacing="2">CUISINE · BUDGET · LOCATION</text>
+</svg>

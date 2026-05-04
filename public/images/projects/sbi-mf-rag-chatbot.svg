@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#A8323C"/>
+  <circle cx="650" cy="100" r="200" fill="#C24454" opacity="0.4"/>
+  <circle cx="120" cy="430" r="180" fill="#8B232C" opacity="0.5"/>
+  <g opacity="0.18" fill="#FAF6EE">
+    <rect x="540" y="280" width="180" height="14" rx="7"/>
+    <rect x="540" y="310" width="140" height="14" rx="7"/>
+    <rect x="540" y="340" width="160" height="14" rx="7"/>
+  </g>
+  <g opacity="0.18" fill="#FAF6EE">
+    <rect x="60" y="380" width="120" height="14" rx="7"/>
+    <rect x="60" y="410" width="160" height="14" rx="7"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#FAF6EE" font-weight="400">SBI MF</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#FAD7D4" font-weight="400">RAG Chatbot.</text>
+  <text x="60" y="320" font-family="Inter, sans-serif" font-size="13" fill="#FAF6EE" opacity="0.7" letter-spacing="2">2,916 CHUNKS · ZERO ADVISORY</text>
+</svg>

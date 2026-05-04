@@ -1,0 +1,37 @@
+---
+title: "SBI MF RAG Chatbot"
+hook: "A production-grade RAG chatbot that answers SBI Mutual Fund queries from official sources only. Built a compliance-first refusal layer to block advisory queries and a daily auto-refresh pipeline so the bot stays current — zero hallucination risk on investment advice."
+metric: "2,916 chunks"
+metricLabel: "Indexed across 19 official sources, daily auto-refresh"
+tags: ["Shipped", "RAG", "AI"]
+category: "Shipped"
+cardVariant: "crimson"
+featured: true
+date: "2026-04-05"
+liveUrl: "https://sbi-mf-rag-chatbot.vercel.app/"
+githubUrl: "https://github.com/amanav050/sbi-mf-rag-chatbot"
+imageUrl: "/images/projects/sbi-mf-rag-chatbot.svg"
+---
+## The problem
+
+Finding basic mutual fund information — expense ratios, lock-in periods, exit loads — usually means navigating multiple pages and lengthy PDFs, then second-guessing whether the data you found is current. That frustration inspired this project: a RAG chatbot that answers factual questions about SBI Mutual Fund schemes from verified sources only. No opinions, no investment advice — just cited facts.
+
+## Why SBI
+
+SBI is the largest AMC in India by AUM. If this system can handle their complex documentation — factsheets, SIDs, KIMs, scheme pages across fund categories — the same architecture can be adapted for any AMC.
+
+## What I built
+
+A 12-phase pipeline scraping and indexing 19 official sources (4 schemes × 3 document types, plus FAQs and scheme pages). Static documents are chunked into 2,916 knowledge pieces, embedded using bge-small-en-v1.5, and stored in Chroma Cloud with cosine-similarity retrieval. HTML pages auto-refresh daily at 9:15 AM via GitHub Actions so NAV and scheme data stay current. Groq's Llama 3.1 generates concise, context-grounded answers, each with a source citation back to sbimf.com.
+
+## Key decisions
+
+The hardest part was distinguishing factual queries from advisory ones. "What's the expense ratio?" is factual. "Is the expense ratio good?" crosses into advisory. Building the refusal layer — regex pattern matching that politely declines advisory queries and redirects users to SEBI-registered advisors — was where the most product thinking happened. Compliance-first by design, not as an afterthought.
+
+## What I learned
+
+Responsible AI in regulated domains isn't a feature you add at the end; it's a constraint that shapes the whole architecture. The refusal layer made the rest of the system better — narrower scope, sharper retrieval, more trustworthy output.
+
+## Try it live
+
+Live at [sbi-mf-rag-chatbot.vercel.app](https://sbi-mf-rag-chatbot.vercel.app). Source on [GitHub](https://github.com/amanav050/sbi-mf-rag-chatbot).

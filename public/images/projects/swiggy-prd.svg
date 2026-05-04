@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#C26545"/>
+  <circle cx="660" cy="100" r="190" fill="#D7795A" opacity="0.45"/>
+  <circle cx="120" cy="440" r="200" fill="#A24E2F" opacity="0.5"/>
+  <g opacity="0.2" fill="none" stroke="#FAF6EE" stroke-width="2.5">
+    <rect x="520" y="280" width="180" height="120" rx="14"/>
+    <line x1="540" y1="310" x2="680" y2="310"/>
+    <line x1="540" y1="335" x2="660" y2="335"/>
+    <line x1="540" y1="360" x2="640" y2="360"/>
+    <circle cx="555" cy="385" r="6" fill="#FAF6EE"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#FAF6EE" font-weight="400">Swiggy</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#FAD7C4" font-weight="400">silent churn.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#FAF6EE" opacity="0.7" letter-spacing="2">ETA · TRUST · ₹4,723 Cr</text>
+</svg>
