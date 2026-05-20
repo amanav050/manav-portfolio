@@ -33,7 +33,7 @@ export default function Home() {
           <div className="rounded-2xl bg-peach/50 p-6 hover:-translate-y-1 transition">
             <p className="text-[10px] tracking-widest text-ink/50 mb-3">RESEARCH</p>
             <h3 className="font-serif text-2xl text-ink mb-2">Signal over noise</h3>
-            <p className="text-sm text-ink/65 leading-relaxed">42-person quant surveys, 6-person qualitative interviews, real behaviour over assumptions.</p>
+            <p className="text-sm text-ink/65 leading-relaxed">Real conversations with real users. Hypotheses tested, not assumed. The signal hidden in what people actually do — not what they say.</p>
           </div>
         </div>
       </section>
