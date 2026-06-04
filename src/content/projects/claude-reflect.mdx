@@ -1,0 +1,111 @@
+---
+title: "Claude Reflect — making AI uncertainty visible before users build on it"
+hook: "Every major AI delivers polished confidence regardless of whether the reasoning is sound. Built a reasoning transparency layer for Claude — uncertainty flags, gap disclosure, and a critical question gate — that turns blind trust into directed verification."
+metric: "91% intent"
+metricLabel: "of users said uncertainty flagging would change their behavior"
+tags: ["Shipped", "AI", "Trust & Safety"]
+category: "Shipped"
+cardVariant: "ink"
+featured: true
+date: "2026-06-01"
+pdfUrl: "/pdfs/claude-reflect.pdf"
+liveUrl: "https://claude-reflect-hkwlmw7h1-amanav050-3080s-projects.vercel.app/"
+githubUrl: "https://github.com/amanav050/claude-reflect"
+imageUrl: "/images/projects/claude-reflect.svg"
+---
+
+## The problem
+
+Every major AI platform — ChatGPT, Gemini, Copilot, Perplexity, Claude — delivers responses with the same polish and confidence regardless of whether the reasoning behind them is sound. Users have zero signal to distinguish a reliable response from one built on assumptions, fabricated details, or missing context.
+
+The gap isn't citation. It's metacognitive transparency — showing users what the AI was uncertain about, what it skipped, and the confidence structure behind its reasoning. No platform out of 5 analysed, and no tool out of 16 third-party solutions reviewed, provides this to end users.
+
+## The paradox
+
+The most damaging AI failures aren't the ones users catch — they're the ones users build on before discovering the error. Users execute system architectures, submit job applications, and include AI-generated numbers in financial reports. By the time they discover the error, the damage has compounded.
+
+The coping mechanisms are all broken: 42% of burned users started checking everything (friction that kills productivity), 30% changed nothing (persistent over-trust that creates liability), and 15% switched tools entirely. No user recovered to calibrated trust.
+
+## The research
+
+33 survey responses + 8 in-depth interviews with AI users across experience levels. 4 academic papers on trust calibration and automation bias, plus Stanford HAI AI Index 2025 and McKinsey Global AI Survey 2025.
+
+Key findings: 67% don't fully verify AI outputs. 88% have received wrong outputs or wouldn't know if they had. 91% said uncertainty flagging would change their behavior. 5 out of 8 interview participants couldn't locate uncertainty in a Claude response when asked directly.
+
+Academic research confirms the mechanism: polished outputs trigger a "fluency heuristic" where users equate smooth language with correctness.
+
+## Why Claude
+
+Three reasons, in order of strength.
+
+**Brand thesis** — Anthropic is the only AI company founded on safety-first principles. Trust transparency isn't a feature addition, it's brand delivery.
+
+**Behavioural foundation** — Claude already hedges and disclaims uncertainty in its tone. Reflect takes that from implicit language to explicit structure. No other major LLM does this natively.
+
+**Native integration** — A product-level feature shipped inside the interface where trust decisions happen. Not a plugin, not a wrapper.
+
+## Hypotheses and what I killed
+
+Three hypotheses tested against RICE (Reach × Impact × Confidence ÷ Effort).
+
+**H1 — User hypothesis (chosen, RICE score 116):** If Claude surfaces reasoning confidence before the user acts, it intercepts errors before they compound.
+
+**H2 — Business hypothesis (score 60):** Valid but derivative. Retention is the business outcome of the user problem, not the cause.
+
+**H3 — Market hypothesis (score 7):** True but passive. Positioning doesn't change behaviour at the moment of evaluation.
+
+## Solutions I rejected (and why)
+
+Three solutions explored, each killed by a specific research finding.
+
+**Confidence Scoring (percentage per sentence):** Killed because "a score of 72% doesn't tell you WHY" — 45% of users want reasoning steps, not scores.
+
+**Peer Verification Layer (second model checks first):** Killed because a participant gave enough context and Claude still made wrong assumptions. A second model reading the same prompt makes the same mistakes. Agreement ≠ correctness.
+
+**Post-Output Interrogation (click any sentence to see reasoning):** Killed because 5/8 users couldn't locate uncertainty. Assumes users know where to click. Helps experts who don't need help, fails early-career users who need it most.
+
+## What I built
+
+A reasoning transparency panel that activates alongside every Claude response. Four components, each traced to a specific research finding.
+
+**Reasoning Skeleton with Honesty Labels** — Each step tagged: "from your input" (green), "general knowledge" (blue), "inference" (amber), "assumption" (red). Shows *how* Claude built the answer, not just *what* it concluded.
+
+**Uncertainty Flags** — Specific sentences highlighted with confidence levels. Bidirectional linking: click a flag → response highlights the sentence. Click a sentence → panel scrolls to the explanation. Does the locating for users who can't.
+
+**Gap Disclosure** — What Claude chose *not* to cover, listed as short items. Makes the known unknowns visible.
+
+**Critical Question Gate** — One question before the user acts. Two buttons: "I've considered this" or "Help me think through this." Not passive text — requires user action. Interrupts the copy-paste-ship loop.
+
+## How it works
+
+User sends a query. API call 1 generates the response and streams it to the left panel. API call 2 takes the response + original query and generates a structured JSON reflection. The React frontend renders both simultaneously. Inline confidence dots appear in the main response text as it streams. The Reflect panel on the right shows the four components.
+
+Total added latency: ~1.5–2 seconds. Tech stack: React + Vite frontend, Groq API (LLaMA 3.3 70B), deployed on Vercel.
+
+## Success metrics
+
+**North Star — Trust Calibration Rate:** 25–30% month 1 baseline, increasing quarter over quarter. Defined as % of sessions where a user engages with ≥1 Reflect component AND modifies behaviour before acting.
+
+**Leading indicators:** Panel engagement >30%, cross-link click rate >10%, critical question engagement >40%, post-Reflect targeted verification >15%.
+
+**Guardrails:** Panel collapse rate <35%, response abandonment ±5% vs baseline after week 2, reflection mismatch <15% month 1 / <10% month 3, false confidence rate <3% (strictest threshold — a green dot on a wrong claim actively compounds the trust problem).
+
+## What could go wrong
+
+Seven failure modes identified, each with specific mitigations. The three most critical:
+
+**Reflect itself becomes the new object of blind trust** — mitigated by the critical question gate forcing active engagement and gap disclosure being transparent about its own limitations.
+
+**Sentence matching breaks and a wrong dot appears on the wrong sentence** — mitigated by three-layer matching with silent failure on mismatch. Designed to underperform quietly, never misperform visibly.
+
+**Only helps careful users while careless users collapse the panel** — mitigated by inline dots living in the main response itself. A red dot next to a sentence they're about to copy creates friction even for users who never open the panel.
+
+## What I learned
+
+Claude Reflect doesn't eliminate AI errors. It makes them visible before users build on them. The hardest design decision wasn't *what* to surface — it was making sure the surfacing itself didn't become a new vector for blind trust.
+
+The shift I'm trying to create: users move from two broken states (blind trust or blanket skepticism) to one productive state — directed verification. Check the right things, not everything.
+
+## Try it live
+
+Live at [claude-reflect](https://claude-reflect-hkwlmw7h1-amanav050-3080s-projects.vercel.app/). Source on [GitHub](https://github.com/amanav050/claude-reflect).
