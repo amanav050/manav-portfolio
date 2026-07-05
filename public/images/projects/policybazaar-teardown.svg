@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#1F2D4D"/>
+  <circle cx="660" cy="120" r="200" fill="#2A4070" opacity="0.5"/>
+  <circle cx="100" cy="440" r="220" fill="#15203A" opacity="0.6"/>
+  <g opacity="0.2" fill="#F2F0E8">
+    <rect x="530" y="260" width="40" height="100" rx="4"/>
+    <rect x="585" y="290" width="40" height="70" rx="4"/>
+    <rect x="640" y="240" width="40" height="120" rx="4"/>
+    <rect x="695" y="310" width="40" height="50" rx="4"/>
+  </g>
+  <g opacity="0.5">
+    <text x="540" y="395" font-family="Inter, sans-serif" font-size="10" fill="#B8C4DB">80</text>
+    <text x="598" y="395" font-family="Inter, sans-serif" font-size="10" fill="#B8C4DB">52%</text>
+    <text x="650" y="395" font-family="Inter, sans-serif" font-size="10" fill="#B8C4DB">48%</text>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#F2F0E8" font-weight="400">PolicyBazaar</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="56" font-style="italic" fill="#B8C4DB" font-weight="400">teardown.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#F2F0E8" opacity="0.7" letter-spacing="2">80 PLANS · 48% UNDER-INSURED</text>
+</svg>

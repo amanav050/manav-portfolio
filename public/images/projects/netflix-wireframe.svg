@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="500" fill="#A8323C"/>
+  <circle cx="660" cy="100" r="200" fill="#C24454" opacity="0.4"/>
+  <circle cx="120" cy="440" r="180" fill="#8B232C" opacity="0.5"/>
+  <g opacity="0.2" stroke="#FAF6EE" stroke-width="2.5" fill="none">
+    <rect x="520" y="240" width="55" height="90" rx="8"/>
+    <rect x="590" y="240" width="55" height="90" rx="8"/>
+    <rect x="660" y="240" width="55" height="90" rx="8"/>
+    <circle cx="547" cy="360" r="8" fill="#FAF6EE" opacity="0.3"/>
+    <circle cx="617" cy="360" r="8" fill="#FAF6EE" opacity="0.3"/>
+    <circle cx="687" cy="360" r="8" fill="#FAF6EE" opacity="0.3"/>
+  </g>
+  <text x="60" y="180" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#FAF6EE" font-weight="400">Netflix</text>
+  <text x="60" y="240" font-family="Georgia, serif" font-size="60" font-style="italic" fill="#FAD7D4" font-weight="400">Redesign.</text>
+  <text x="60" y="430" font-family="Inter, sans-serif" font-size="13" fill="#FAF6EE" opacity="0.7" letter-spacing="2">18 MIN SCROLL · 3 TAPS · INTENT</text>
+</svg>
