@@ -72,7 +72,7 @@ export default async function ProjectPage({
                 href={project.liveUrl} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-dark rounded-full text-sm font-medium hover:scale-[1.03] hover:shadow-lg transition"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-cream rounded-full text-sm font-medium hover:scale-[1.03] hover:shadow-lg transition"
               >
                 Try live app <span>↗</span>
               </a>
@@ -124,11 +124,19 @@ export default async function ProjectPage({
               <p className="text-xs tracking-widest text-ink/60">FULL DOCUMENT</p>
               <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">Open in new tab ↗</a>
             </div>
-            <iframe
-              src={project.pdfUrl}
-              className="w-full h-[700px]"
-              title={project.title}
-            />
+            <object
+              data={project.pdfUrl}
+              type="application/pdf"
+              className="w-full"
+              style={{ height: "700px" }}
+            >
+              <div className="flex flex-col items-center justify-center py-16 px-6 text-center">
+                <p className="text-ink/60 text-sm mb-3">PDF preview not available in this browser.</p>
+                <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-cream rounded-full text-sm font-medium hover:scale-[1.03] transition">
+                  Open PDF <span>↗</span>
+                </a>
+              </div>
+            </object>
           </div>
         )}
 
