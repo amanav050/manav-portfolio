@@ -65,28 +65,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <section className="mx-auto max-w-[1400px] px-8 py-12">
-        <div className="rounded-3xl bg-dark p-10 relative overflow-hidden">
-          <div className="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-accent/20 blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-accent/15 blur-3xl pointer-events-none" />
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-success/15 rounded-full mb-5">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
-              </span>
-              <span className="text-xs text-success">CURRENTLY BUILDING</span>
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-cream mb-3 max-w-2xl">
-              SynergyFit — an AI fitness app shipping <span className="italic text-accent">soon.</span>
-            </h2>
-            <p className="text-cream/70 text-base leading-relaxed max-w-xl">
-              Personalised workout and diet plans built from a user's body metrics, fitness goals, and available time. Currently in production. More projects loading regularly.
-            </p>
-          </div>
-        </div>
-      </section>
       <Footer />
     </main>
   );
